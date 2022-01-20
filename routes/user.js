@@ -18,5 +18,17 @@ router.post("/", (req, res) => {
 
 });
 
+router.get("/:id" , (req,res) => {
+
+    const { id } = req.params;
+    const FindByid = users.find((user) => {
+        if(user.id === id){
+            return(user)
+        }
+    })
+
+    res.send(FindByid)
+})
+
 
 module.exports = router;
